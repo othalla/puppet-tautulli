@@ -44,7 +44,25 @@
 #
 class tautulli {
 
+  $user = 'tautulli'
+  $uid  = 892
   # Tautulli user
+
+  group { $user:
+    ensure => present,
+    gid    => $uid,
+  }
+  -> user { $user:
+    ensure     => present,
+    uid        => $uid,
+    gid        => $uid,
+    groups     => $user,
+    home       => '/nonexistent',
+    shell      => '/usr/sbin/nologin',
+    managehome => true,
+    password   => '*',
+    comment    => 'Tautulli user',
+  }
 
   include ::tautulli::install
 
