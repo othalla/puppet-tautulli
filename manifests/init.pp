@@ -63,7 +63,12 @@ class tautulli {
     password   => '*',
     comment    => 'Tautulli user',
   }
-
-  include ::tautulli::install
-
+  vcsrepo { '/opt/Tautulli':
+    ensure   => latest,
+    provider => git,
+    remote   => 'origin',
+    revision => 'master',
+    user     => $user,
+    source   => 'https://github.com/Tautulli/Tautulli.git',
+  }
 }
