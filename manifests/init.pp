@@ -63,7 +63,13 @@ class tautulli {
     password   => '*',
     comment    => 'Tautulli user',
   }
-  vcsrepo { '/opt/Tautulli':
+  -> file { '/opt/Tautulli':
+    ensure => directory,
+    mode   => '0744',
+    owner  => $user,
+    group  => $user,
+  }
+  -> vcsrepo { '/opt/Tautulli':
     ensure   => latest,
     provider => git,
     remote   => 'origin',
