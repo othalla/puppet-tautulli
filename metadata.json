@@ -1,0 +1,15 @@
+{
+  "name": "puppet-tautulli",
+  "version": "0.1.0",
+  "author": "othalla",
+  "summary": "Module to setup Tautulli for Plex",
+  "license": "Apache-2.0",
+  "source": "https://github.com/othalla/puppet-tautulli",
+  "project_page": "https://github.com/othalla/puppet-tautulli",
+  "issues_url": "https://github.com/othalla/puppet-tautulli/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
