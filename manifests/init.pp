@@ -44,5 +44,8 @@
 #
 class tautulli {
 
+  # Tautulli user
+
+  include ::tautulli::install
 
 }
