@@ -18,13 +18,13 @@ class tautulli::install (
     uid        => $uid,
     gid        => $uid,
     groups     => $user,
-    home       => '/nonexistent',
+    home       => "/home/${user}",
     shell      => '/usr/sbin/nologin',
     managehome => true,
     password   => '*',
     comment    => 'Tautulli user',
   }
-  -> file { [$install_dir, $config_dir]:
+  -> file { [$install_dir, $data_dir]:
     ensure => directory,
     mode   => '0740',
     owner  => $user,

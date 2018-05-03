@@ -44,12 +44,12 @@
 Description=Tautulli - Stats for Plex Media Server usage
 
 [Service]
-ExecStart=<%= $install_dir %>/Tautulli.py --quiet --daemon --nolaunch --config <%= $config_dir %>/config.ini
---datadir <%= $data_dir %>
+ExecStart=<%= $::tautulli::service::install_dir %>/Tautulli.py --quiet --daemon --nolaunch --config <%= $::tautulli::service::config_dir %>/config.ini
+--datadir <%= $::tautulli::service::data_dir %>
 GuessMainPID=no
 Type=forking
-User=<%= $user %>
-Group=<%= $user %>
+User=<%= $::tautulli::service::user %>
+Group=<%= $::tautulli::service::user %>
 
 [Install]
 WantedBy=multi-user.target
