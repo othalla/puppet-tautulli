@@ -48,34 +48,7 @@ class tautulli {
   $uid         = 892
   $install_dir = '/opt/Tautulli'
 
-  group { $user:
-    ensure => present,
-    gid    => $uid,
-  }
-  -> user { $user:
-    ensure     => present,
-    uid        => $uid,
-    gid        => $uid,
-    groups     => $user,
-    home       => '/nonexistent',
-    shell      => '/usr/sbin/nologin',
-    managehome => true,
-    password   => '*',
-    comment    => 'Tautulli user',
-  }
-  -> file { $install_dir:
-    ensure => directory,
-    mode   => '0744',
-    owner  => $user,
-    group  => $user,
-  }
-  -> vcsrepo { $install_dir:
-    ensure   => present,
-    provider => git,
-    remote   => 'origin',
-    revision => 'master',
-    user     => $user,
-    source   => 'https://github.com/Tautulli/Tautulli.git',
-  }
+  contain ::tautulli::install
   contain ::tautulli::service
+  Class['::tautulli::install'] ~> Class['::tautulli::service']
 }
