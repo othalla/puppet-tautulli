@@ -18,9 +18,9 @@ class tautulli::install (
     uid        => $uid,
     gid        => $uid,
     groups     => $user,
-    home       => "/home/${user}",
+    #home       => "/home/${user}",
     shell      => '/usr/sbin/nologin',
-    managehome => true,
+    #    managehome => true,
     password   => '*',
     comment    => 'Tautulli user',
   }

@@ -46,7 +46,7 @@ class tautulli (
   $user        = 'tautulli',
   $uid         = 892,
   $install_dir = '/opt/tautulli',
-  $config_dir  = "/home/${user}/.config/tautulli",
+  $config_dir  = '/opt/tautilli',
   $data_dir    = '/var/tautulli',
 ) {
 
