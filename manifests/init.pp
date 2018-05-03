@@ -44,9 +44,9 @@
 #
 class tautulli {
 
-  $user = 'tautulli'
-  $uid  = 892
-  # Tautulli user
+  $user        = 'tautulli'
+  $uid         = 892
+  $install_dir = '/opt/Tautulli'
 
   group { $user:
     ensure => present,
@@ -63,18 +63,19 @@ class tautulli {
     password   => '*',
     comment    => 'Tautulli user',
   }
-  -> file { '/opt/Tautulli':
+  -> file { $install_dir:
     ensure => directory,
     mode   => '0744',
     owner  => $user,
     group  => $user,
   }
-  -> vcsrepo { '/opt/Tautulli':
-    ensure   => latest,
+  -> vcsrepo { $install_dir:
+    ensure   => present,
     provider => git,
     remote   => 'origin',
     revision => 'master',
     user     => $user,
     source   => 'https://github.com/Tautulli/Tautulli.git',
   }
+  contain ::tautulli::service
 }
