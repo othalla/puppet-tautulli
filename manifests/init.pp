@@ -43,11 +43,11 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class tautulli (
-  $user        = 'tautulli'
-  $uid         = 892
-  $install_dir = '/opt/tautulli'
-  $config_dir  = "/home/${user}/.config/tautulli"
-  $data_dir    = '/var/tautulli'
+  $user        = 'tautulli',
+  $uid         = 892,
+  $install_dir = '/opt/tautulli',
+  $config_dir  = "/home/${user}/.config/tautulli",
+  $data_dir    = '/var/tautulli',
 ) {
 
   contain ::tautulli::install
