@@ -46,7 +46,9 @@ class tautulli {
 
   $user        = 'tautulli'
   $uid         = 892
-  $install_dir = '/opt/Tautulli'
+  $install_dir = '/opt/tautulli'
+  $config_dir  = '/opt/tautulli'
+  $data_dir    = '/var/tautulli'
 
   contain ::tautulli::install
   contain ::tautulli::service

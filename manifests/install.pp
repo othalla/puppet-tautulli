@@ -5,6 +5,8 @@ class tautulli::install (
   $user        = $::tautulli::user,
   $uid         = $::tautulli::uid,
   $install_dir = $::tautulli::install_dir,
+  $config_dir  = $::tautulli::config_dir,
+  $data_dir    = $::tautulli::data_dir,
 ) {
 
   group { $user:
@@ -22,9 +24,9 @@ class tautulli::install (
     password   => '*',
     comment    => 'Tautulli user',
   }
-  -> file { $install_dir:
+  -> file { [$install_dir, $config_dir]:
     ensure => directory,
-    mode   => '0744',
+    mode   => '0740',
     owner  => $user,
     group  => $user,
   }
