@@ -58,10 +58,35 @@ include ::tautulli
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+user
+----
+Unix user account for Tautulli install.
+
+- *Default*: tautulli
+
+uid
+---
+Unix user account uid.
+
+- *Default*: 892
+
+install_dir
+-----------
+Directory where to install Tautulli.
+
+- *Default*: /opt/tautulli
+
+config_dir
+----------
+Directory where to store Tautulli config .ini file.
+
+- *Default*: /opt/tautulli
+
+data_dir
+----------
+Directory where to store Tautulli database .db file.
+
+- *Default*: /var/tautulli
 
 ## Limitations
 
