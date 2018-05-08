@@ -59,6 +59,10 @@ This section is where you describe how to customize, configure, and do the
 fancy stuff with your module here. It's especially helpful if you include usage
 examples and code samples for doing things with your module.
 
+```
+include ::tautulli
+```
+
 ## Reference
 
 Here, include a complete list of your module's classes, types, providers,
