@@ -1,5 +1,5 @@
 {
-  "name": "puppet-tautulli",
+  "name": "othalla-tautulli",
   "version": "0.1.0",
   "author": "othalla",
   "summary": "Module to setup Tautulli for Plex",
