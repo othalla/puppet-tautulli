@@ -2,14 +2,14 @@ sudo: false
 language: ruby
 cache: bundler
 before_install:
-  - bundle -v
-  - rm -f Gemfile.lock
-  - gem update --system
-  - gem update bundler
-  - gem --version
-  - bundle -v
+- bundle -v
+- rm -f Gemfile.lock
+- gem update --system
+- gem update bundler
+- gem --version
+- bundle -v
 script: bundle exec rake validate lint spec
-bundler_args: --without system_tests
+bundler_args: "--without system_tests"
 matrix:
   fast_finish: true
   include:
@@ -22,8 +22,8 @@ notifications:
 deploy:
   provider: puppetforge
   user: othalla
-  password: 
-    secure: b8iJ12u02Q5l5Ad0ZtEVHs1/tBSoD0FQNKUrPd5nOWs8LHyAD9Y/IUfUpCjYDCa46bVc/9/Cp9qe/T0iklynNDdNk42x2veB2o82qQpT24fRBhuFcQKsRzDMMHST3NABWpQaJxI8S4IqUkNnb/8DtECs9odSBPKQXGVK3ThQCaT4GIdfprlOHl5Em59g+VleZ1zlw1CP6Qzru5OJ5h33dguY2G4kItbdXy7FxpinEDomgd1iNWT1epC4A6KjCIRvh8j2Ik6oxREzaQf67DPq5GXByWbHpWTqx34rGh78776jzKgBAEO5uBVkXCGaP7PahSEJUDJxZPJzujSYhB5EE8qS3ttFxk+wvQZzjild52O1NEGP18vos51uagdTLveyKnhyPovRvzwQ/oaUmadNAiB0g8B27ICC6OSzp5MBIp+fRuJ9xgae+m2TmiygFLSGNCfM06vF0EG5dPsSlWa2LavMLDdIsBDIuVxQR3UwMClUPtJDtkoskh0Khs6TW0jj+tTazwTUVTXhwFo9Wd8W7JJsnxa9c5z7N6d5wFciF3TO3T2U6YEBG7X7LiQdopRTcJriLuxv5QgwL1WvrwGpYTS2Qa3sWw5Nsutv2kb+81XmHjfze+x2tLCwrOuOV1hrVf2b9YKcO9mf6aGS73QldWegAf2GfxIRJpdauGxt47s=
+  password:
+    secure: "hMGXepwlmOzjtgkzFjLFWLftAEmijLXBvJ3hqvkjyRLWRkLh8jIU8O1MDZY0+JfZnqnXf6lP//tIqElHQxA7wpxG6YCLTkAiZ4VRW9QqmFwk1Rn6/IhAzoh+ZGDHl8SarwZqrwAqGyrYnEygEJM0t4M1tzxKJeRAWC8BOqL7NEIxyaq9h4SJMpDiBIuT7Mw48mPP2i9H2q3EENXK++DtgPLWE64Y0Qgl05PSZ294qjg7OtA2Lodtyo26JAF4/GxrKiAnmLxL0hYZOKhA9no9mygSm7yR+XQggmWyRD7ivLo+zWO63xBmxx/V7ejexsL9a7Ggf8GIl7FzTb56irVbzI5vJfp6l2lJOw2bzfesUDdqOgENBaebOjgwBlinnshkgf3+IaWYhOLQrhXKQOJRj8O+dXSCIGshxC2o+gOl9HVoeEsuwSZ4cE+CeMTTY2cEuPx6JQZaVFE5NvxcqKX86AByV1H3bY7S6Fu66J7Cx3dgPcFgiukOHs7yVm1nA9ghDclTlwBFfl63pbmCe+SEuLa92PDX1Fz+XorRVN9Ia8CE6rSMz10RiR+CbJVZEY/nIW/OE8BbAoBqqMHH+WwAKth+Z8LIGCbUPpKF557KAabufaIqwcMgBQatIN91v+gbhfy3eDiO1DqELbR6T+N0/t53mPE3rGyXMZt2DSXS8Ws="
   on:
     tags: true
     all_branches: true
