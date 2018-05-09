@@ -1,5 +1,7 @@
 # tautulli
 
+[![Build Status](https://travis-ci.org/othalla/puppet-tautulli.svg?branch=master)](https://travis-ci.org/othalla/puppet-tautulli)
+
 #### Table of Contents
 
 1. [Description](#description)
