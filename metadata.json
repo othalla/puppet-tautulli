@@ -8,7 +8,10 @@
   "project_page": "https://github.com/othalla/puppet-tautulli",
   "issues_url": "https://github.com/othalla/puppet-tautulli/issues",
   "dependencies": [
-    {"name":"puppetlabs-vcsrepo","version_requirement":">= 1.0.0"}
+    {
+      "name": "puppetlabs-vcsrepo",
+      "version_requirement": ">= 1.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
@@ -36,6 +39,13 @@
       ]
     }
   ],
-  "data_provider": null
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.7.1",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.7.1-0-g810b982"
 }
-
